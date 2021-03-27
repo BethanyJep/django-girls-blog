@@ -1,15 +1,7 @@
 # Python to Linux Web App on Azure
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Visual Studio Enterprise-Bethany(a7796dca-c172-4d06-93ce-cb226fecba93)'
-    appType: 'webAppLinux'
-    WebAppName: 'pikachúcodes'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
-    RuntimeStack: 'PYTHON|3.8'
 # Build your Python project and deploy it to Azure as a Linux Web App.
 # Change python version to one thats appropriate for your application.
-# https://docs.microsoft.com/azure/devops/pipelines/languages/python
+# https://docs.microsoft.com/azure/devops/pipelines/languages/python\
 
 trigger:
 - master
@@ -64,6 +56,7 @@ stages:
         archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
         replaceExistingArchive: true
 
+
     - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
       displayName: 'Upload package'
       artifact: drop
@@ -86,6 +79,15 @@ stages:
             inputs:
               versionSpec: '$(pythonVersion)'
             displayName: 'Use Python version'
+
+        # - task: AzureRmWebAppDeployment@4
+        #   inputs:
+        #     ConnectionType: 'AzureRM'
+        #     azureSubscription: 'Visual Studio Enterprise-Bethany(a7796dca-c172-4d06-93ce-cb226fecba93)'
+        #     appType: 'webAppLinux'
+        #     WebAppName: 'pikachúcodes'
+        #     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+        #     RuntimeStack: 'PYTHON|3.8'
 
           - task: AzureWebApp@1
             displayName: 'Deploy Azure Web App : pikach&#250;codes'
