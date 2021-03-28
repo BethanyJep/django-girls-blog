@@ -15,5 +15,8 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'pikachú.settings')
 
 application = get_wsgi_application()
 
+# import pikachú
+# import waitress
+# waitress.serve(pikachú.wsgifunc, port=8041, url_scheme='https')
 # from pikachú.wsgi import blog
 # application = blog(application)
