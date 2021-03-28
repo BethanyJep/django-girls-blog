@@ -23,5 +23,4 @@ $RECYCLE.BIN/
 # Visual Studio
 .vscode/
 .history/
-.github
 *.code-workspace
