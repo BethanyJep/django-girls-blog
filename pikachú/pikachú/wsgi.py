@@ -15,5 +15,5 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'pikachú.settings')
 
 application = get_wsgi_application()
 
-from helloworld.wsgi import HelloWorldApplication
-application = HelloWorldApplication(application)
+# from helloworld.wsgi import HelloWorldApplication
+# application = HelloWorldApplication(application)

@@ -70,3 +70,9 @@ python manage.py createsuperuser
 ```
 
 ## create a .gitignore file
+
+## using gunicorn
+```
+pip install waitress
+waitress-serve --listen=*:8000 <appName>.wsgi:application
+```
